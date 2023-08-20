@@ -1,0 +1,8 @@
+
+.nao-conectado{
+    -fx-fill: red;
+}
+
+.conectado{
+    -fx-fill: green;
+}

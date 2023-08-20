@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox 
+   xmlns = "http://javafx.com/javafx" 
+   xmlns:fx = "http://javafx.com/fxml" 
+   prefHeight = "400" prefWidth="600"
+   fx:controller="ifpr.pgua.eic.escola.controllers.cursos.JanelaCursos"
+   stylesheets="@../css/estilo_branco.css"
+   alignment = "CENTER"
+   spacing = "10.0">
+
+   <Button text="Cadastrar Curso" prefWidth="70" onAction="#carregaTelaCursosCadastrar"/>
+   <Button text="Listar Curso" prefWidth="70" onAction="#carregaTelaCursosListar"/> 
+
+</VBox>

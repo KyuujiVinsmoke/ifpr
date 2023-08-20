@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.HBox?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<HBox xmlns="http://javafx.com/javafx" 
+    xmlns:fx="http://javafx.com/fxml" 
+    prefHeight="400" prefWidth="800"
+    fx:controller="ifpr.pgua.eic.listatelefonica.controllers.JanelaListar"
+    spacing="5.0"
+    >
+
+    <padding>
+        <Insets topRightBottomLeft="20.0"/>
+    </padding>
+
+    <VBox spacing="5.0">
+        <HBox spacing="5.0">
+            <TextField fx:id="tfBuscar" prefWidth="130"/>
+            <Button text="Buscar" onAction="#buscar"/>
+        </HBox>
+
+        <ListView fx:id="ltvContatos" onMouseClicked="#mostrarDetalhes" prefWidth="150" prefHeight="500"/>
+    </VBox>
+    
+    <VBox spacing="5.0">
+        <TextArea fx:id="taDetalhes" editable="false"  prefWidth="400" prefHeight="400"/>
+    </VBox>
+      
+</HBox>

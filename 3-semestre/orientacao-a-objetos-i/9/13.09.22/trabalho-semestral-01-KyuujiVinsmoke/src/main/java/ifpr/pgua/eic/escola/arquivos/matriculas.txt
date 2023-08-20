@@ -1,0 +1,4 @@
+1;GustaGol;123456;gustagol@yahouu;90907070;2022-09-12
+1;Josefino;2003;@gmail.com;923;2022-09-12
+2;GustaGol;123456;gustagol@yahouu;90907070;2022-09-12
+3;Josefino;2003;@gmail.com;923;2022-09-12

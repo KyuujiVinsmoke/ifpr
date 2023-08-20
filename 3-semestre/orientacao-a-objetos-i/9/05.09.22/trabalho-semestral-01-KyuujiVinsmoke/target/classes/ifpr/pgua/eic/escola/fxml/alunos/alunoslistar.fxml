@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.HBox?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<HBox xmlns="http://javafx.com/javafx" 
+    xmlns:fx="http://javafx.com/fxml" 
+    prefHeight="400" prefWidth="600"
+    fx:controller="ifpr.pgua.eic.escola.controllers.alunos.JanelaAlunosListar"
+    spacing="5.0"
+    stylesheets="@../css/estilo_branco.css">
+
+    <padding>
+        <Insets topRightBottomLeft="20.0"/>
+    </padding>
+
+    <VBox spacing="5.0">
+        <HBox spacing="5.0">
+            <TextField fx:id="tfBusca" prefWidth="120"/>
+            <Button text="Buscar" onAction="#buscarAlunoCpf" prefWidth="70"/>
+        </HBox>
+
+        <ListView fx:id="ltvAlunos" onMouseClicked="#mostraDetalhesAlunos" prefWidth="120" prefHeight="500"/>
+    </VBox>
+
+    <VBox spacing="5.0">
+        <TextArea fx:id="taDetalhes" prefWidth="300" prefHeight="400" editable="false"/>
+    </VBox>
+
+</HBox>

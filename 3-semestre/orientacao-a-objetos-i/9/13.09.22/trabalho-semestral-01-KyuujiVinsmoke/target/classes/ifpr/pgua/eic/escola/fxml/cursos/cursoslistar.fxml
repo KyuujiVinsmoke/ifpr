@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.HBox?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<HBox xmlns="http://javafx.com/javafx" 
+    xmlns:fx="http://javafx.com/fxml" 
+    prefHeight="600" prefWidth="800"
+    fx:controller="ifpr.pgua.eic.escola.controllers.cursos.JanelaCursosListar"
+    spacing="5.0">
+
+    <padding>
+        <Insets topRightBottomLeft="20.0"/>
+    </padding>
+
+    <VBox spacing="5.0">
+        <HBox spacing="5.0">
+            <TextField fx:id="tfBusca" prefWidth="240" promptText="Buscar Curso"/>
+            <Button text="Buscar" onAction="#buscarCurso" prefWidth="70" styleClass="vbox-button"/>
+        </HBox>
+
+        <ListView fx:id="ltvCursos" onMouseClicked="#mostraDetalhesCursos" prefWidth="320" prefHeight="800"/>
+    </VBox>
+
+    <VBox spacing="5.0">
+        <TextArea fx:id="taDetalhes" prefWidth="320" prefHeight="800" editable="false"/>
+    </VBox>
+
+</HBox>

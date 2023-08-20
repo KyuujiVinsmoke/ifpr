@@ -1,0 +1,14 @@
+{
+  "tests": [
+    {
+      "name": "Testes",
+      "setup": "",
+      "run": "mvn --batch-mode verify",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    }
+  ]
+}

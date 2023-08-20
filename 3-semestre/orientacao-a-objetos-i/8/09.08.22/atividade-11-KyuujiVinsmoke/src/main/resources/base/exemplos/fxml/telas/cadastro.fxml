@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox   
+    xmlns = "http://javafx.com/javafx" 
+    xmlns:fx = "http://javafx.com/fxml" 
+    prefHeight = "400" prefWidth="600"
+    fx:controller = "base.exemplos.fxml.controllers.TelaCadastro"
+    spacing = "5.0"
+    >
+
+    <Label text = "Placa: "/>
+    <TextField fx:id = "tfPlaca"/>
+
+    <Label text = "Modelo: "/>
+    <TextField fx:id = "tfModelo"/>
+         
+    <Label text = "Cor: "/>
+    <TextField fx:id = "tfCor"/>
+         
+    <Label text = "Fabricante: "/>
+    <TextField fx:id = "tfFabricante"/>
+        
+    <Label text = "Ano Fabricação: "/>
+    <TextField fx:id = "tfAnoFabricacao"/>
+
+    <HBox spacing = "5.0" alignment = "CENTER_RIGHT">
+        <Button text = "Cadastrar" onAction = "#cadastrar"/>
+        <Button text = "Voltar"/>
+    </HBox>
+
+</VBox>

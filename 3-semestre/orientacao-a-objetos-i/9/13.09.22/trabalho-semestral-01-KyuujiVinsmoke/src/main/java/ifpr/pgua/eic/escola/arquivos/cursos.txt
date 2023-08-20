@@ -1,0 +1,4 @@
+1;Rotica;descritiva;8;Moacir;2424;moac@email.com;4002 8922;2000.0
+2;Mambi;4:20;420;Choryscreuda;123;naoteinteressa@sla;3579;23412.0
+3;35;35;35;Moacir;2424;moac@email.com;4002 8922;2000.0
+4;4;4;4;Choryscreuda;123;naoteinteressa@sla;3579;23412.0
