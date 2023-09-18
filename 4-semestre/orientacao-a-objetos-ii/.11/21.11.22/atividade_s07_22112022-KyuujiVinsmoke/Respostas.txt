@@ -1,9 +1,9 @@
-1) É necessário utilizado um ResultSet, para então criar um statment que retornara um ResultSet, podendo assim utiliza-lo como um objeto em java.
+1) Utilize uma biblioteca JDBC para estabelecer uma conexão com o banco de dados, permitindo a seleção das linhas desejadas da tabela. Após a consulta, preencha um objeto Java com os mesmos atributos.
 
-2) É como um contrato, ele garante que aqueles métodos serão implementados pelo arquivo que o "extend".
+2) Uma 'interface' é um contrato com as classes que a implementaram. Nela são apenas declarados os métodos que serão utilizados, sem nenhuma implementação, tornando obrigatório as classes que a implementam (através de "implements") conter todos estes métodos.
 
-3) DAO ou Objeto de Acesso a Dados é uma forma padronizada para manipular os dados que estão em um arquivo ou banco de dados, dando uma maior segurança ao seu acesso e manipulação, também facilitando a utilização dos usuários que estão trabalhando com ele.
+3) DAO ou Objeto de Acesso a Dados é um padrão de projeto utilizado para separar/encapsular o acesso aos dados de leitura e gravação. De modo que o código não dependa de como ou onde estes dados estão sendo salvos, proporcionando mudanças no tipo de conexão sem se quer mexer no código, apenas nas DAOs.
 
-4) O sistema deverá poder manipular os dados de 4 formas diferentes, sendo elas: criar, ler, atualizar e apagar.
+4) O sistema deverá conter 4 métodos principais para manipular os dados, sendo elas: Create (Criar), Read (Ler), Update (Atualizar) e Delete (Apagar).
 
-5) Está incorreto, pois pode gerar problemas futuros no código. A forma correta seria criar uma pasta para repository e outra para daos, tornando com que os arquivos do código tenham menores responsabilidades, uma manutenção mais fácil e também garantindo uma maior segurança.
+5) Embora não seja incorreto, não é uma abordagem recomendada. É aconselhável manter uma separação de responsabilidade, para que sua manutenção ao decorrer do tempo seja mais fácil. Para a melhora seria recomendado a utilização de alguma arquitetura em camadas como MVC ou MVVM.

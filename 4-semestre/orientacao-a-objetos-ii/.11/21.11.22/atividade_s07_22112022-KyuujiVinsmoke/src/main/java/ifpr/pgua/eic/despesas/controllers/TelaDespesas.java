@@ -17,7 +17,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-public class TelaDespesas extends BaseController implements Initializable{
+public class TelaDespesas extends BaseController implements Initializable {
 
     @FXML
     private TextField tfTitulo;
@@ -59,14 +59,12 @@ public class TelaDespesas extends BaseController implements Initializable{
     private TelaDespesasViewModel viewModel;
 
 
-    public TelaDespesas(TelaDespesasViewModel viewModel){
+    public TelaDespesas(TelaDespesasViewModel viewModel) {
         this.viewModel = viewModel;
     }
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
-        
-
         //define quais serão as propriedades que servirão para preencher
         //o valor da coluna. Note que o nome da propriedade deve possuir
         //um get equivalente no modelo que representa a linha da tabela.
@@ -82,7 +80,6 @@ public class TelaDespesas extends BaseController implements Initializable{
             // TODO Auto-generated method stub
             showMessage(newVal);
         });
-
 
         //liga a propriedade texto do textfield nome com a propriedade do viewmodel
         tfTitulo.textProperty().bindBidirectional(viewModel.tituloProperty());
@@ -107,5 +104,4 @@ public class TelaDespesas extends BaseController implements Initializable{
     private void limpar(){
         viewModel.limpar();
     }
-
 }

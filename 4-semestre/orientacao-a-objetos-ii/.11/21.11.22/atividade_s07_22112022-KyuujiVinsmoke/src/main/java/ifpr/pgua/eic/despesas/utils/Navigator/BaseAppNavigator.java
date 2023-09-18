@@ -1,6 +1,5 @@
 package ifpr.pgua.eic.despesas.utils.Navigator;
 
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -23,9 +22,7 @@ import javafx.stage.Stage;
  * 
  */
 
-
-public abstract class BaseAppNavigator extends Application{
-
+public abstract class BaseAppNavigator extends Application {
     private static StackPane root;
     private static Scene cena;
     private Stage palco;
@@ -39,9 +36,9 @@ public abstract class BaseAppNavigator extends Application{
         root = new StackPane();
         
         String homeRegistry = getHome();
-        if(homeRegistry != null){
+        if(homeRegistry != null) {
             pushScreen(homeRegistry);
-        }else{
+        } else {
             throw new RuntimeException("Um dos métodos getHome deve retornar algo diferente de null!");
         }
 
@@ -64,25 +61,23 @@ public abstract class BaseAppNavigator extends Application{
      * e seu controlador.
      */
 
-    public final static void pushScreen(String nomeTela){
+    public final static void pushScreen(String nomeTela) {
         ScreenRegistry screen = pegaTela(nomeTela);
-        if(root.getChildren().size() > 0){
+        if(root.getChildren().size() > 0) {
             root.getChildren().get(root.getChildren().size()-1).setVisible(false);
         }
 
         Parent tela = screen.getRoot();
         root.getChildren().add(tela);
     }
-
-    
-        
+     
     /***
      * Método responsável por desempilhar a tela que está no topo e mostrar
      * a tela anterior. Deve ser utilizado em conjunto com o pushScreen.
      */
 
-    public final static void popScreen(){
-        if(root.getChildren().size() < 2){
+    public final static void popScreen() {
+        if(root.getChildren().size() < 2) {
             throw new RuntimeException("NO SCREENS TO POP!!");
         }
         root.getChildren().remove(root.getChildren().size()-1);
@@ -99,13 +94,13 @@ public abstract class BaseAppNavigator extends Application{
      * @param regiao localização onde a parte será inserida.
      */
 
-    public final static void changeScreenRegion(String nomeTela, BorderPaneRegion regiao){
-        try{
+    public final static void changeScreenRegion(String nomeTela, BorderPaneRegion regiao) {
+        try {
             ScreenRegistry screenPiece = pegaTela(nomeTela);
             BorderPane borderPane = (BorderPane) root.getChildren().get(root.getChildren().size()-1);
             Parent root = screenPiece.getRoot();
             
-            switch(regiao){
+            switch(regiao) {
                 case LEFT: 
                     borderPane.setLeft(root);
                 break;
@@ -123,14 +118,12 @@ public abstract class BaseAppNavigator extends Application{
                 break;
                 
             }
-        }catch(Exception e){
+        } catch(Exception e) {
             System.out.println("PROBLEMA AO CARREGAR O FXML!!! O root da cena é um BorderPane?");
             e.printStackTrace();
             Platform.exit();
         }
     }
-
-
 
     /**
      * Método responsável por indicar quel é a tela inicial da aplicação.
@@ -146,39 +139,35 @@ public abstract class BaseAppNavigator extends Application{
      */
     public abstract String getAppTitle();
 
-    public void registraTela(String nome, ScreenRegistry tela){
-        if(nome.isBlank() || nome.isEmpty() || nome == null){
+    public void registraTela(String nome, ScreenRegistry tela) {
+        if(nome.isBlank() || nome.isEmpty() || nome == null) {
             throw new RuntimeException("[REGISTRA TELA] Nome inválido!");
         }
 
-        if(tela == null){
+        if(tela == null) {
             throw new RuntimeException("[REGISTRA TELA] Tela inválida!");
         }
 
-        if(registroTelas.containsKey(nome)){
+        if(registroTelas.containsKey(nome)) {
             throw new RuntimeException("[REGISTRA TELA] Tela já registrada!");
         }
 
         registroTelas.put(nome, tela);
-
     }
 
-    private static ScreenRegistry pegaTela(String nome){
-        if(!registroTelas.containsKey(nome)){
+    private static ScreenRegistry pegaTela(String nome) {
+        if(!registroTelas.containsKey(nome)) {
             throw new RuntimeException("[PEGA TELA] Tela não registrada!");
         }
 
         return registroTelas.get(nome);
     }
 
-    public void adicionarArquivoEstilo(String arquivo){
+    public void adicionarArquivoEstilo(String arquivo) {
         root.getStylesheets().add(arquivo);
     }
 
     public void atualizaEstilo(){}
 
     public abstract void registrarTelas();
-
-
-
 }

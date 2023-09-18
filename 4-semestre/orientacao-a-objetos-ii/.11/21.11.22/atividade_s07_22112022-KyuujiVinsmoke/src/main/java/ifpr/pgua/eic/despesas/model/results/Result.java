@@ -9,19 +9,19 @@ package ifpr.pgua.eic.despesas.model.results;
 public abstract class Result {
     private String msg;
 
-    public Result(String msg){
+    public Result(String msg) {
         this.msg = msg;
     }
 
-    public static Result success(String msg){
+    public static Result success(String msg) {
         return new SuccessResult(msg);
     }
 
-    public static Result fail(String msg){
+    public static Result fail(String msg) {
         return new FailResult(msg);
     }
 
-    public String getMsg(){
+    public String getMsg() {
         return msg;
     }
 }

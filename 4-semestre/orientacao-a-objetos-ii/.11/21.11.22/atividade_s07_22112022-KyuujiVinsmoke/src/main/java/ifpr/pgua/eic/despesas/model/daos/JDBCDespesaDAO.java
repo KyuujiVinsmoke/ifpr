@@ -14,20 +14,16 @@ import ifpr.pgua.eic.despesas.model.entities.Despesa;
 import ifpr.pgua.eic.despesas.model.results.Result;
 
 
-public class JDBCDespesaDAO implements DespesaDAO
-{
+public class JDBCDespesaDAO implements DespesaDAO {
     private  FabricaConexoes fabricaConexoes;
 
-    public JDBCDespesaDAO(FabricaConexoes fabricaConexoes)
-    {
+    public JDBCDespesaDAO(FabricaConexoes fabricaConexoes) {
         this.fabricaConexoes = fabricaConexoes;
     }
 
     @Override
-    public Result cadastrar(Despesa despesa) 
-    {
-        try
-        {
+    public Result cadastrar(Despesa despesa)  {
+        try {
             Connection con = fabricaConexoes.getConnection();
 
             PreparedStatement stm = con.prepareStatement("INSERT INTO despesas(titulo, valor, data, tipo) VALUES (?, ?, ?, ?)");
@@ -39,10 +35,7 @@ public class JDBCDespesaDAO implements DespesaDAO
             stm.execute();
             stm.close();
             con.close();
-        }
-
-        catch( SQLException exception)
-        {
+        } catch(SQLException exception) {
             exception.printStackTrace();
             return Result.fail("Falhou");
         }
@@ -51,33 +44,28 @@ public class JDBCDespesaDAO implements DespesaDAO
     }
 
     @Override
-    public Result alterar(int id, Despesa despesa) 
-    {
+    public Result alterar(int id, Despesa despesa) {
         return null;
     }
 
     @Override
-    public Result deletar( int id) 
-    {
+    public Result deletar( int id) {
         return null;
     }
 
     @Override
-    public List<Despesa> listDespesa() 
-    {
+    public List<Despesa> listDespesa() {
         List<Despesa> despesa = new ArrayList<>();
         Despesa despesaAdd = null;
 
-        try
-        {
+        try{
             Connection con = fabricaConexoes.getConnection();
 
             PreparedStatement stm = con.prepareStatement("SELECT * FROM despesas");
             
             ResultSet resultSet = stm.executeQuery();
 
-            while(resultSet.next())
-            {
+            while(resultSet.next()) {
                 Integer idDespesas = resultSet.getInt("id");
                 String tituloDespesas = resultSet.getString("titulo");
                 Double valorDespesas = resultSet.getDouble("valor");
@@ -94,8 +82,7 @@ public class JDBCDespesaDAO implements DespesaDAO
             return despesa;
         }
         
-        catch(SQLException e)
-        {
+        catch(SQLException e) {
             e.printStackTrace();
             return null;
         }

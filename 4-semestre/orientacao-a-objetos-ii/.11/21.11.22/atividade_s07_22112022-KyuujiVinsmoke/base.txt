@@ -1,0 +1,28 @@
+Fabrica de conexoes
+model /
+
+Modelos (Despesa.java)
+model / entities
+
+
+DAO interface (DespesaDAO.java)
+model / daos
+
+
+DAO Implementação (JDBCDespesaDAO.java)
+Model / daos
+
+
+Troca de dados com o banco (DespesaRepository.java)
+model / repository
+
+
+As telas
+controllers /
+
+
+Package criado pelo hugo para retornar o resutado fail/sucess
+results /
+
+
+Não esquecer de adicionar o repository na ao registrar as telas

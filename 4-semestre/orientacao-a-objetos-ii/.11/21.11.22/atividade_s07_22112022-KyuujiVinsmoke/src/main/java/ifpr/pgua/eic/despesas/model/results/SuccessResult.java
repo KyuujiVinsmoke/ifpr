@@ -10,7 +10,5 @@ public class SuccessResult extends Result {
      */
     public SuccessResult(String msg) {
         super(msg);
-    }
-    
-    
+    }   
 }

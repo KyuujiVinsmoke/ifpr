@@ -9,7 +9,6 @@ import java.util.stream.Collectors;
 import ifpr.pgua.eic.despesas.model.FabricaConexoes;
 
 public class DataBaseCreator {
-    
     private static final String SQL_FILE="sqls/script_sqlite.sql";
 
     public static void main(String[] args) throws Exception{
@@ -32,6 +31,6 @@ public class DataBaseCreator {
         stm.close();
         con.close();
     }
-
-
 }
+
+// Cria o banco SQL

@@ -17,5 +17,4 @@ public class FailResult extends Result {
     public FailResult(String msg) {
         super(msg);
     }
-    
 }

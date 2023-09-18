@@ -10,41 +10,35 @@ import ifpr.pgua.eic.despesas.model.repository.DespesaRepository;
 import ifpr.pgua.eic.despesas.utils.Navigator.BaseAppNavigator;
 import ifpr.pgua.eic.despesas.utils.Navigator.ScreenRegistryFXML;
 
-public class App extends BaseAppNavigator 
-{
+public class App extends BaseAppNavigator {
     private DespesaDAO despesaDao;
     private DespesaRepository despesaRepository;
 
     @Override
-    public void init() throws Exception 
-    {
+    public void init() throws Exception {
         despesaDao = new JDBCDespesaDAO(FabricaConexoes.getInstance());
         despesaRepository = new DespesaRepository(despesaDao);
         super.init();
     }
 
     @Override
-    public void stop() throws Exception 
-    {
+    public void stop() throws Exception {
         super.stop();
     }
 
     @Override
-    public String getHome() 
-    {
+    public String getHome() {
         return "PRINCIPAL";
     }
 
     @Override
-    public String getAppTitle() 
-    {
+    public String getAppTitle() {
         return "Despesas";
     }
 
     @Override
-    public void registrarTelas() 
-    {
+    public void registrarTelas() {
         registraTela("PRINCIPAL", new ScreenRegistryFXML(getClass(), "fxml/principal.fxml", (o)->new TelaPrincipal()));
-        registraTela("DESPESAS", new ScreenRegistryFXML(getClass(), "fxml/despesas.fxml", (o)->new TelaDespesas(new TelaDespesasViewModel(despesaRepository))));  
+        registraTela("DESPESAS", new ScreenRegistryFXML(getClass(), "fxml/despesas.fxml", (o)->new TelaDespesas(new TelaDespesasViewModel(despesaRepository)))); 
     }
 }

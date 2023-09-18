@@ -10,21 +10,20 @@ public class DespesaRow {
     
     private Despesa despesa;
     
-    public DespesaRow(Despesa despesa){
+    public DespesaRow(Despesa despesa) {
         this.despesa = despesa;
     }
 
-    public Despesa getDespesa(){
+    public Despesa getDespesa() {
         return despesa;
     }
-
 
     /**
      * Propriedade para representar o atributo id da despesa.
      * 
      * @return SimpleStringProperty com o valor do id da despesa.
      */
-    public StringProperty idProperty(){
+    public StringProperty idProperty() {
         return new SimpleStringProperty(String.valueOf(despesa.getId()));
     }
 
@@ -34,7 +33,7 @@ public class DespesaRow {
      * @return SimpleStringProperty com o valor do titulo da despesa.
      */
 
-    public StringProperty tituloProperty(){
+    public StringProperty tituloProperty() {
         return new SimpleStringProperty(despesa.getTitulo());
     }
 
@@ -43,7 +42,7 @@ public class DespesaRow {
      * 
      * @return SimpleStringProperty com o valor da despesa.
      */
-    public StringProperty valorProperty(){
+    public StringProperty valorProperty() {
         return new SimpleStringProperty(String.valueOf(despesa.getValor()));
     }
 
@@ -52,7 +51,7 @@ public class DespesaRow {
      * 
      * @return SimpleStringProperty com o valor do tipo da despesa.
      */
-    public StringProperty tipoProperty(){
+    public StringProperty tipoProperty() {
         return new SimpleStringProperty(despesa.getTipo());
     }
 
@@ -61,9 +60,7 @@ public class DespesaRow {
      * 
      * @return SimpleStringProperty com o valor da data da despesa.
      */
-    public StringProperty dataProperty(){
+    public StringProperty dataProperty() {
         return new SimpleStringProperty(DateTimeFormatter.ofPattern("dd/MM/yyyy").format(despesa.getData()));
     }
-
-
 }

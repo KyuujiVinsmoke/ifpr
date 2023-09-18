@@ -3,7 +3,7 @@ package ifpr.pgua.eic.despesas.utils.Navigator;
 import javafx.scene.Parent;
 import javafx.util.Callback;
 
-public class ScreenRegistryNoFXML implements ScreenRegistry{
+public class ScreenRegistryNoFXML implements ScreenRegistry {
     
     private Callback construtor;
     
@@ -11,11 +11,7 @@ public class ScreenRegistryNoFXML implements ScreenRegistry{
         this.construtor = construtor;
     }
 
-    public Parent getRoot(){
+    public Parent getRoot() {
         return (Parent) construtor.call(null);
     }
-
-    
-
-
 }

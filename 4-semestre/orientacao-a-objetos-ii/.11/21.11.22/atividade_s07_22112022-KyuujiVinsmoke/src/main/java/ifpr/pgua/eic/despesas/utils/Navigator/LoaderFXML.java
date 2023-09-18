@@ -32,6 +32,4 @@ public class LoaderFXML {
         }
         return null;
     }
-
-
 }
