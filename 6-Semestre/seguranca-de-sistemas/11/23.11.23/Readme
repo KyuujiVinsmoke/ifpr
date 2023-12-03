@@ -1,0 +1,13 @@
+Passo Um: Decidir a frase - "Me passa".
+Passo Dois: Converter letra a letra para um número. Utilizando as letras em ordem alfabética de 01 a 26, 
+sendo o "0" utilizado para espaços e adicionar um "0" no final de todos os números depois de convertido.
+Passo Três: Montar uma cor no padrão RGBA com os números convertidos.
+OBS: O zero sempre pode ser utilizado para preencher espaços vazios.
+
+
+M   e       p   a   s   s   a
+13  05  00  16  01  19  19  01
+
+
+130, 050, 000, 160
+010, 190, 190, 010
